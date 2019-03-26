@@ -12,8 +12,8 @@ namespace tictactoe
 {
     public partial class Form1 : Form
     {
-        bool Turn = true; // When True It's X turn, If false O's turn
-
+        bool turn = true; // When True It's X turn, If false O's turn
+        int turnCount = 0;
 
         public Form1()
         {
@@ -37,13 +37,14 @@ namespace tictactoe
         private void button_click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            if (Turn)
+            if (turn)
                 b.Text = "X";
             else
                 b.Text = "O";
 
-            Turn = !Turn;
+            turn = !turn;
             b.Enabled = false;
+            turnCount++;
 
             WinnerCheck();
         }
@@ -81,13 +82,17 @@ namespace tictactoe
             {
                 DisableButtons();
                 string win = "";
-                if (Turn)
+                if (turn)
                     win = "O";
                 else
                     win = "X";
                 MessageBox.Show("Player " + win + " Wins!", "Winner");
             }
-
+            else
+            {
+                if (turnCount == 9)
+                    MessageBox.Show("Draw! ", "Who Won!?");
+            }
         }
 
         private void DisableButtons()
@@ -107,5 +112,23 @@ namespace tictactoe
         {
 
         }
+       
+        private void newGameToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            turn = true;
+            turnCount = 0;
+            try
+            {
+                foreach (Control c in Controls)
+                {
+                    Button b = (Button)c;
+                    b.Enabled = true;
+                    b.Text = "";
+                }
+            }
+            catch { }
+        }
     }
+
+
 }
