@@ -24,19 +24,19 @@ namespace tictactoe
         {
         }
 
-        private void ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)    ///exit button
         {
             Application.Exit();
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) /// gives information when you press on about button in the meny
         {
             MessageBox.Show("By Axel", "Tic Tac Toe");
         }
 
-        private void button_click(object sender, EventArgs e)
+        private void button_click(object sender, EventArgs e) /// the playfield
         {
-            Button b = (Button)sender;
+            Button b = (Button)sender;              //gives the button on the playfield a value.
             if (turn)
                 b.Text = "X";
             else
@@ -44,14 +44,14 @@ namespace tictactoe
 
             turn = !turn;
             b.Enabled = false;
-            turnCount++;
+            turnCount++;                                // counting the moves on the playfield
 
             WinnerCheck();
         }
 
-        private void WinnerCheck()
+        private void WinnerCheck()                  //choose the winner
         {
-            bool winner = false;
+            bool winner = false;                    
 
 
             //horizontal checks
@@ -70,7 +70,7 @@ namespace tictactoe
             if ((A3.Text == B3.Text) && (B3.Text == C3.Text) && (!A3.Enabled))
                 winner = true;
 
-            //obliquely checks
+            //Diaganol checks
             if ((A1.Text == B2.Text) && (B2.Text == C3.Text) && (!A1.Enabled))
                 winner = true;
             if ((A3.Text == B2.Text) && (B2.Text == C1.Text) && (!A3.Enabled))
@@ -78,7 +78,7 @@ namespace tictactoe
 
 
 
-            if (winner)
+            if (winner)                                         //shows whos the winner and a popup message show if X or O won.
             {
                 DisableButtons();
                 string win = "";
@@ -90,12 +90,12 @@ namespace tictactoe
             }
             else
             {
-                if (turnCount == 9)
+                if (turnCount == 9)                                    // If no one win a popup massage (Draw)
                     MessageBox.Show("Draw! ", "Who Won!?");
             }
         }
 
-        private void DisableButtons()
+        private void DisableButtons()                           //Disable the rest of buttons when someone has won or it's a draw.
         {
             try
             {
@@ -108,18 +108,18 @@ namespace tictactoe
             catch { }
         }
 
-        private void A3_Click(object sender, EventArgs e)
+        private void A3_Click(object sender, EventArgs e)      
         {
 
         }
        
-        private void newGameToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void newGameToolStripMenuItem_Click_1(object sender, EventArgs e) // crate a new match when you press on button "New Game"
         {
-            turn = true;
+            turn = true;                        // resets the playfield after a new game starts.
             turnCount = 0;
             try
             {
-                foreach (Control c in Controls)
+                foreach (Control c in Controls) // enable all button again.
                 {
                     Button b = (Button)c;
                     b.Enabled = true;
