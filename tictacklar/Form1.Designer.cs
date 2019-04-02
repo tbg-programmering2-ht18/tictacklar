@@ -45,6 +45,13 @@
             this.C1 = new System.Windows.Forms.Button();
             this.C2 = new System.Windows.Forms.Button();
             this.C3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.x_win_count = new System.Windows.Forms.Label();
+            this.draw_count = new System.Windows.Forms.Label();
+            this.o_win_count = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,19 +80,19 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
             // 
             // ToolStripMenuItem
             // 
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.ToolStripMenuItem.Text = "Exit";
             this.ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -119,6 +126,8 @@
             this.A1.TabIndex = 1;
             this.A1.UseVisualStyleBackColor = true;
             this.A1.Click += new System.EventHandler(this.button_click);
+            this.A1.MouseEnter += new System.EventHandler(this.button_enter);
+            this.A1.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // A2
             // 
@@ -129,6 +138,8 @@
             this.A2.TabIndex = 2;
             this.A2.UseVisualStyleBackColor = true;
             this.A2.Click += new System.EventHandler(this.button_click);
+            this.A2.MouseEnter += new System.EventHandler(this.button_enter);
+            this.A2.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // A3
             // 
@@ -139,6 +150,8 @@
             this.A3.TabIndex = 3;
             this.A3.UseVisualStyleBackColor = true;
             this.A3.Click += new System.EventHandler(this.button_click);
+            this.A3.MouseEnter += new System.EventHandler(this.button_enter);
+            this.A3.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // B1
             // 
@@ -149,6 +162,8 @@
             this.B1.TabIndex = 4;
             this.B1.UseVisualStyleBackColor = true;
             this.B1.Click += new System.EventHandler(this.button_click);
+            this.B1.MouseEnter += new System.EventHandler(this.button_enter);
+            this.B1.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // B2
             // 
@@ -159,6 +174,8 @@
             this.B2.TabIndex = 5;
             this.B2.UseVisualStyleBackColor = true;
             this.B2.Click += new System.EventHandler(this.button_click);
+            this.B2.MouseEnter += new System.EventHandler(this.button_enter);
+            this.B2.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // B3
             // 
@@ -169,6 +186,8 @@
             this.B3.TabIndex = 6;
             this.B3.UseVisualStyleBackColor = true;
             this.B3.Click += new System.EventHandler(this.button_click);
+            this.B3.MouseEnter += new System.EventHandler(this.button_enter);
+            this.B3.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // C1
             // 
@@ -179,6 +198,8 @@
             this.C1.TabIndex = 7;
             this.C1.UseVisualStyleBackColor = true;
             this.C1.Click += new System.EventHandler(this.button_click);
+            this.C1.MouseEnter += new System.EventHandler(this.button_enter);
+            this.C1.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // C2
             // 
@@ -189,6 +210,8 @@
             this.C2.TabIndex = 8;
             this.C2.UseVisualStyleBackColor = true;
             this.C2.Click += new System.EventHandler(this.button_click);
+            this.C2.MouseEnter += new System.EventHandler(this.button_enter);
+            this.C2.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // C3
             // 
@@ -199,12 +222,84 @@
             this.C3.TabIndex = 9;
             this.C3.UseVisualStyleBackColor = true;
             this.C3.Click += new System.EventHandler(this.button_click);
+            this.C3.MouseEnter += new System.EventHandler(this.button_enter);
+            this.C3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button_leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 279);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "X-Win Count";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(114, 279);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Draw Count";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(185, 279);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "O-Win Count";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "label4";
+            // 
+            // x_win_count
+            // 
+            this.x_win_count.AutoSize = true;
+            this.x_win_count.Location = new System.Drawing.Point(59, 292);
+            this.x_win_count.Name = "x_win_count";
+            this.x_win_count.Size = new System.Drawing.Size(13, 13);
+            this.x_win_count.TabIndex = 14;
+            this.x_win_count.Text = "0";
+            // 
+            // draw_count
+            // 
+            this.draw_count.AutoSize = true;
+            this.draw_count.Location = new System.Drawing.Point(134, 292);
+            this.draw_count.Name = "draw_count";
+            this.draw_count.Size = new System.Drawing.Size(13, 13);
+            this.draw_count.TabIndex = 15;
+            this.draw_count.Text = "0";
+            // 
+            // o_win_count
+            // 
+            this.o_win_count.AutoSize = true;
+            this.o_win_count.Location = new System.Drawing.Point(211, 292);
+            this.o_win_count.Name = "o_win_count";
+            this.o_win_count.Size = new System.Drawing.Size(13, 13);
+            this.o_win_count.TabIndex = 16;
+            this.o_win_count.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 296);
+            this.ClientSize = new System.Drawing.Size(292, 326);
+            this.Controls.Add(this.o_win_count);
+            this.Controls.Add(this.draw_count);
+            this.Controls.Add(this.x_win_count);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.C3);
             this.Controls.Add(this.C2);
             this.Controls.Add(this.C1);
@@ -247,5 +342,12 @@
         private System.Windows.Forms.Button C1;
         private System.Windows.Forms.Button C2;
         private System.Windows.Forms.Button C3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label x_win_count;
+        private System.Windows.Forms.Label draw_count;
+        private System.Windows.Forms.Label o_win_count;
     }
 }

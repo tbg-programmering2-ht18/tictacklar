@@ -83,14 +83,23 @@ namespace tictactoe
                 DisableButtons();
                 string win = "";
                 if (turn)
+                {
                     win = "O";
+                    o_win_count.Text = (Int32.Parse(o_win_count.Text) + 1).ToString();
+                }
                 else
+                {
                     win = "X";
+                    x_win_count.Text = (Int32.Parse(x_win_count.Text) + 1).ToString();
+                }
                 MessageBox.Show("Player " + win + " Wins!", "Winner");
             }
             else
             {
-                if (turnCount == 9)                                    // If no one win a popup massage (Draw)
+                
+                    if (turnCount == 9)                                    // If no one win a popup massage (Draw)
+                    draw_count.Text = (Int32.Parse(draw_count.Text) + 1).ToString();
+                
                     MessageBox.Show("Draw! ", "Who Won!?");
             }
         }
@@ -117,18 +126,39 @@ namespace tictactoe
         {
             turn = true;                        // resets the playfield after a new game starts.
             turnCount = 0;
-            try
-            {
+            
                 foreach (Control c in Controls) // enable all button again.
+                {
+                try
                 {
                     Button b = (Button)c;
                     b.Enabled = true;
                     b.Text = "";
                 }
+                catch { }
             }
-            catch { }
+            }
+
+        private void button_enter(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (turn)
+                b.Text = "x";                
+                else
+                b.Text = "o";
+            
         }
+
+        private void button_leave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button_leave(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
 
 
-}
