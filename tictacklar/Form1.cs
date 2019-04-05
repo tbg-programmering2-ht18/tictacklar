@@ -96,11 +96,13 @@ namespace tictactoe
             }
             else
             {
-                
-                    if (turnCount == 9)                                    // If no one win a popup massage (Draw)
+
+                if (turnCount == 9)
+                {                            // If no one win a popup massage (Draw)
                     draw_count.Text = (Int32.Parse(draw_count.Text) + 1).ToString();
-                
+
                     MessageBox.Show("Draw! ", "Who Won!?");
+                }
             }
         }
 
@@ -126,9 +128,9 @@ namespace tictactoe
         {
             turn = true;                        // resets the playfield after a new game starts.
             turnCount = 0;
-            
-                foreach (Control c in Controls) // enable all button again.
-                {
+
+            foreach (Control c in Controls) //enable all button again
+            {
                 try
                 {
                     Button b = (Button)c;
@@ -137,28 +139,62 @@ namespace tictactoe
                 }
                 catch { }
             }
-            }
+
+        }
 
         private void button_enter(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            if (turn)
-                b.Text = "x";                
+            if (b.Enabled)
+            {
+                if (turn)
+                {
+                    b.Text = "x";
+                }
                 else
-                b.Text = "o";
-            
-        }
-
-        private void button_leave(object sender, MouseEventArgs e)
-        {
-
+                {
+                    b.Text = "o";
+                }
+            }
         }
 
         private void button_leave(object sender, EventArgs e)
         {
+            Button b = (Button)sender;
+            if (b.Enabled)
+            {
+                if (turn)
+                {
+                    b.Text = "";
+                }
+                else
+                {
+                    b.Text = "";
+                }
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
-    }
-    }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetCountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            o_win_count.Text = "0";
+            x_win_count.Text = "0";
+            draw_count.Text = "0";
+        }
+    }
+}
 
